@@ -8,10 +8,22 @@ export interface IUserIntent extends Document {
   type?: 'vehicule' | 'immobilier';
   language?: 'fr' | 'en';
   lastProposedIds?: number[];
-  status: 'collecting' | 'ready';
+  status: 'collecting' | 'ready' | 'collecting_info';
+  requestType?: 'rental' | 'purchase';
   lastUpdated: Date;
   localisationFr?: string;
   localisationEn?: string;
+  selectedOfferId?: number;
+  selectedOfferDetails?: any;
+  userInfo?: {
+    nom?: string;
+    prenom?: string;
+    telephone?: string;
+    villeActuelle?: string;
+    email?: string;
+    nombreJours?: number;
+    dateDebut?: string;
+  };
 }
 
 const UserIntentSchema = new Schema<IUserIntent>({
@@ -22,10 +34,22 @@ const UserIntentSchema = new Schema<IUserIntent>({
   type: { type: String, enum: ['vehicule', 'immobilier'] },
   language: { type: String, enum: ['fr', 'en'] },
   lastProposedIds: [{ type: Number }],
-  status: { type: String, enum: ['collecting', 'ready'], default: 'collecting' },
+  status: { type: String, enum: ['collecting', 'ready', 'collecting_info'], default: 'collecting' },
+  requestType: { type: String, enum: ['rental', 'purchase'] },
   lastUpdated: { type: Date, default: Date.now },
   localisationFr: { type: String },
   localisationEn: { type: String },
+  selectedOfferId: { type: Number },
+  selectedOfferDetails: { type: Schema.Types.Mixed },
+  userInfo: {
+    nom: { type: String },
+    prenom: { type: String },
+    telephone: { type: String },
+    villeActuelle: { type: String },
+    email: { type: String },
+    nombreJours: { type: Number },
+    dateDebut: { type: String },
+  },
 });
 
 const UserIntent = mongoose.model<IUserIntent>('UserIntent', UserIntentSchema);
