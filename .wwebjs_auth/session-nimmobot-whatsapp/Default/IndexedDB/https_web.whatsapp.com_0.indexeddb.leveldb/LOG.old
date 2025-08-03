@@ -1,3 +1,16 @@
-2025/08/03-11:38:16.382 9c0c Reusing MANIFEST C:\Users\Le_geek_charmant\Documents\SIMBTECH\Customers\Ai\NimmoBotFinal\.wwebjs_auth\session-nimmobot-whatsapp\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000570
-2025/08/03-11:38:16.386 9c0c Recovering log #9065
-2025/08/03-11:38:16.408 9c0c Reusing old log C:\Users\Le_geek_charmant\Documents\SIMBTECH\Customers\Ai\NimmoBotFinal\.wwebjs_auth\session-nimmobot-whatsapp\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/009065.log 
+2025/08/03-14:28:27.568 c0b4 Recovering log #11387
+2025/08/03-14:28:27.737 c0b4 Reusing old log C:\Users\Le_geek_charmant\Documents\SIMBTECH\Customers\Ai\NimmoBotFinal\.wwebjs_auth\session-nimmobot-whatsapp\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/011387.log 
+2025/08/03-14:28:27.778 c0b4 Delete type=3 #570
+2025/08/03-14:28:32.959 b4f8 Level-0 table #11427: started
+2025/08/03-14:28:32.974 b4f8 Level-0 table #11427: 435817 bytes OK
+2025/08/03-14:28:32.976 b4f8 Delete type=0 #11387
+2025/08/03-14:28:32.976 b4f8 Manual compaction at level-0 from '\x00\x9e\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x9f\x00\x00\x00' @ 0 : 0; will stop at '\x00\x9e\x00\x00\x05' @ 26097186 : 1
+2025/08/03-14:28:32.976 b4f8 Compacting 1@0 + 2@1 files
+2025/08/03-14:28:33.018 b4f8 Generated table #11428@0: 9887 keys, 177166 bytes
+2025/08/03-14:28:33.026 b4f8 Generated table #11429@0: 1247 keys, 28654 bytes
+2025/08/03-14:28:33.035 b4f8 Generated table #11430@0: 98 keys, 108994 bytes
+2025/08/03-14:28:33.047 b4f8 Generated table #11431@0: 430 keys, 19797 bytes
+2025/08/03-14:28:33.047 b4f8 Compacted 1@0 + 2@1 files => 334611 bytes
+2025/08/03-14:28:33.047 b4f8 compacted to: files[ 0 4 45 28 0 0 0 ]
+2025/08/03-14:28:33.049 b4f8 Delete type=2 #11427
+2025/08/03-14:28:33.050 b4f8 Manual compaction at level-0 from '\x00\x9e\x00\x00\x05' @ 26097186 : 1 .. '\x00\x9f\x00\x00\x00' @ 0 : 0; will stop at (end)

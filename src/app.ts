@@ -23,8 +23,15 @@ const server = createServer(app);
 const PORT: number = parseInt(process.env.PORT || '3000', 10);
 
 // Middleware
-app.use(helmet()); // Security headers
-app.use(cors()); // Enable CORS
+app.use(helmet({
+  contentSecurityPolicy: false,
+  hsts: false // Disable HSTS to allow HTTP
+})); // Security headers
+app.use(cors({
+  origin: true, // Allow all origins
+  credentials: true
+})); // Enable CORS
+app.set('trust proxy', 1); // Trust first proxy
 app.use(morgan('combined')); // Logging
 app.use(express.json()); // Parse JSON bodies
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
