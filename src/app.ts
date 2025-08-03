@@ -25,13 +25,26 @@ const PORT: number = parseInt(process.env.PORT || '3000', 10);
 // Middleware
 app.use(helmet({
   contentSecurityPolicy: false,
-  hsts: false // Disable HSTS to allow HTTP
+  hsts: false, // Disable HSTS to allow HTTP
+  crossOriginOpenerPolicy: false, // Disable COOP for HTTP
+  crossOriginEmbedderPolicy: false, // Disable COEP for HTTP
+  originAgentCluster: false // Disable Origin-Agent-Cluster for HTTP
 })); // Security headers
 app.use(cors({
   origin: true, // Allow all origins
   credentials: true
 })); // Enable CORS
 app.set('trust proxy', 1); // Trust first proxy
+
+// Add security headers for VPS deployment
+app.use((req, res, next) => {
+  // Disable security headers that cause issues on HTTP
+  res.removeHeader('Cross-Origin-Opener-Policy');
+  res.removeHeader('Cross-Origin-Embedder-Policy');
+  res.removeHeader('Origin-Agent-Cluster');
+  next();
+});
+
 app.use(morgan('combined')); // Logging
 app.use(express.json()); // Parse JSON bodies
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
